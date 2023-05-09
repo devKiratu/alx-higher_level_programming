@@ -1,0 +1,4 @@
+def print_last_digit(number):
+    digit = abs(number) % 10
+    print(f"{digit}", end="")
+    return digit

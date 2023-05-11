@@ -4,7 +4,6 @@ import calculator_1 as c
 
 
 def calculate():
-    print("argv: {}".format(argv))
     if len(argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)

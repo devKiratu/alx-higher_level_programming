@@ -6,6 +6,7 @@ class Square:
     """ A class defining a square
         Attributes:
             __size: length of the side of the square
+            __position: offset for the square from 0,0
 
         Properties:
             size: getter and setter for __size

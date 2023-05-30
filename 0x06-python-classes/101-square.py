@@ -85,7 +85,7 @@ class Square:
                 print("#", end="")
             print()
 
-    def __str__(self):
+    def __repr__(self):
         """returns a string representation similar to the output of my_print"""
         sq = ""
         a, b = self.position

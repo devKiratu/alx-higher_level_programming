@@ -34,6 +34,9 @@ class Square:
         """ Setter for the attribute __size
             Parameters:
                 size: value for initializing  __size
+            Raises:
+                TypeError: when size is not an integer
+                ValueError: when size is less than 0
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -52,6 +55,10 @@ class Square:
         """Setter for __position
             Parameters:
                 value: tuple representing the position to set
+            Raises:
+                TypeError: when value is not a tuple, or tuple has
+                            more than or less than 2 members or the
+                            tuple members are integers but less then 0
         """
         if isinstance(value, tuple) and len(value) == 2 and \
             all(isinstance(v, int) for v in value) and \

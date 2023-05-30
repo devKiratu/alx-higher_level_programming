@@ -10,7 +10,7 @@ class Square:
 
         Properties:
             size: getter and setter for __size
-            position: square offset from position 0,0
+            position: getter and setter for __position
 
         Methods:
             area: calculates the area of the square

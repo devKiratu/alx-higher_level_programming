@@ -14,10 +14,10 @@ class MagicClass:
             circumference: computes circumference
     """
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """__init__
             Parameters:
-                radius: radius to assign the circle object
+                radius:(optional) radius to assign the circle object
             Raises:
                 TypeError: if radius is not a number
         """

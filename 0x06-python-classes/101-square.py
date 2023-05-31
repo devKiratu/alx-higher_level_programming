@@ -77,6 +77,7 @@ class Square:
         s = " " * a
         if self.size == 0:
             print()
+            return
         for i in range(b):
             print()
         for i in range(self.size):
@@ -91,7 +92,7 @@ class Square:
         a, b = self.position
         s = " " * a
         if self.size == 0:
-            sq += "\n"
+            return sq
         for i in range(b):
             sq += "\n"
         for i in range(self.size):

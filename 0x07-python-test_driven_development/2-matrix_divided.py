@@ -22,13 +22,13 @@ def matrix_divided(matrix, div):
         raise TypeError(matrix_error)
     for r in matrix:
         for el in r:
-            if (not isinstance(el, int) and not isinstance(el, float)):
+            if type(el) not in (int, float):
                 raise TypeError(matrix_error)
     if len(matrix) > 0:
         length = len(matrix[0])
         if not all(len(r) == length for r in matrix):
             raise TypeError("Each row of the matrix must have the same size")
-    if (not isinstance(div, int) and not isinstance(div, float)):
+    if type(div) not in (int, float):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")

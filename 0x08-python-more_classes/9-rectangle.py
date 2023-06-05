@@ -20,8 +20,8 @@ class Rectangle:
                 TypeError: if width/height is not an integer
                 ValueError: if width/height is less than zero
         """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property

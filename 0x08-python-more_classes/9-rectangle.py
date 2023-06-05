@@ -83,6 +83,10 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """class method that creates a square using the Rectangle class
+            Args:
+                size: optional length of the side of the square
+        """
         return cls(size, size)
 
     def __str__(self):

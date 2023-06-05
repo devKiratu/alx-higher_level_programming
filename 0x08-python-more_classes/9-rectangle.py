@@ -87,7 +87,7 @@ class Rectangle:
             Args:
                 size: optional length of the side of the square
         """
-        return cls(size, size)
+        return Rectangle(size, size)
 
     def __str__(self):
         """return a string representation of the rectangle"""

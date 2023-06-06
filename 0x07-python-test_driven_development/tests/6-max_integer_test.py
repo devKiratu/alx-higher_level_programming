@@ -6,6 +6,8 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
+    """Test class for the function max_integer"""
+
     def test_empty_list(self):
         self.assertIsNone(max_integer([]))
         self.assertIsNone(max_integer())
@@ -18,6 +20,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([5]), 5)
         self.assertEqual(max_integer([5.1, 5.6, 5.3, 5.9, 5.7]), 5.9)
         self.assertEqual(max_integer((1, 3, 5, 2, 4)), 5)
+        self.assertEqual(max_integer("1, 3, 5, 2, 4"), "5")
+        self.assertEqual(max_integer("string"), "t")
 
     def test_exceptions_raised(self):
         with self.assertRaises(TypeError):
@@ -25,3 +29,6 @@ class TestMaxInteger(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             max_integer(5)
+
+        with self.assertRaises(TypeError):
+            max_integer([1, 5, [10], (6, 13)])

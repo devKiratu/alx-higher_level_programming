@@ -50,3 +50,8 @@ TypeError: '<' not supported between instances of 'list' and 'int'
 >>> my_list = MyList([5])
 >>> my_list.print_sorted()
 [5]
+>>> my_list = list((4,6,1,8,9))
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  ...
+AttributeError: 'list' object has no attribute 'print_sorted'

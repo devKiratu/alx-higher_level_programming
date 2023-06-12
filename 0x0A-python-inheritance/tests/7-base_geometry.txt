@@ -27,3 +27,13 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 Traceback (most recent call last):
   ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> bg.integer_validator("distance", 1, 2)
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+>>> class_doc = __import__('7-base_geometry').BaseGeometry.__doc__
+>>> len(class_doc) > 2
+True
+>>> func_doc = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+>>> len(func_doc) > 5
+True

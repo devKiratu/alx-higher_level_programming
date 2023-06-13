@@ -5,9 +5,6 @@
 """
 
 
-import json
-
-
 def class_to_json(obj):
     """returns the __dict__ representation of obj"""
     return obj.__dict__

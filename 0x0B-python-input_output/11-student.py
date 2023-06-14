@@ -26,4 +26,5 @@ class Student:
             Args:
                 json: dictionary containing new attributes
         """
-        self.__dict__ = json
+        for pair in json.items():
+            setattr(self, pair[0], pair[1])

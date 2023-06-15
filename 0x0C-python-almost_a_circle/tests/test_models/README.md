@@ -1,2 +1,2 @@
 # test_models
-Unit tests for the `m` package
+Unit tests for the `models` package

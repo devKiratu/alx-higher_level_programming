@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+"""Test suite for Rectangle Class"""
+
+
+import unittest
+from models.rectangle import Rectangle
+
+
+class TestRectangle(unittest.TestCase):
+    """Test class for the Rectangle"""
+    def test_initialization(self):
+        r1 = Rectangle(10, 2)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 0)
+        self.assertEqual(r1.y, 0)
+        r2 = Rectangle(2, 10, 3, 5, 7)
+        self.assertEqual(r2.width, 2)
+        self.assertEqual(r2.height, 10)
+        self.assertEqual(r2.x, 3)
+        self.assertEqual(r2.y, 5)
+        self.assertEqual(r2.id, 7)

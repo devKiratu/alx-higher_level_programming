@@ -47,11 +47,17 @@ class TestRectangle(unittest.TestCase):
             r3 = Rectangle(10, 2, -5, 5)
 
     def test_area(self):
-        r1 = Rectangle(3,2)
+        r1 = Rectangle(3, 2)
         self.assertEqual(r1.area(), 6)
         r1 = Rectangle(2, 10)
         self.assertEqual(r1.area(), 20)
         r1 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r1.area(), 56)
-        r1 = Rectangle(30,22)
+        r1 = Rectangle(30, 22)
         self.assertEqual(r1.area(), 660)
+
+    def test___str__(self):
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/6")
+        r2 = Rectangle(4, 5, 0, 1, 18)
+        self.assertEqual(r2.__str__(), "[Rectangle] (18) 0/1 - 4/5")

@@ -11,6 +11,23 @@ class Square(Rectangle):
         """initializes the a Square instance"""
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """getter for Square size"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """setter for square size
+            Args:
+                value: value to set for size
+            Raises:
+                TypeError: if value is not an integer
+                ValueError: if value <= 0
+        """
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """returns a custom representation of the square instance"""
         s = "[{}] ({}) {}/{} - {}".format(

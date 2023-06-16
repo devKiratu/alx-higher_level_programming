@@ -119,3 +119,12 @@ class Rectangle(Base):
                 self.height
                 )
         return r
+
+    def update(self, *args):
+        """Updates Rectangle attributes
+            Args:
+                args: new attributes list
+        """
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        for i in range(len(args)):
+            setattr(self, attrs[i], args[i])

@@ -35,3 +35,18 @@ class Square(Rectangle):
                 self.id, self.x, self.y, self.width
                 )
         return s
+
+    def update(self, *args, **kwargs):
+        """Updates Square attributes contained in args, or kwargs when args
+            does not exist or is empty
+            Args:
+                args: new attributes list
+                kwargs: a dict of the new attributes
+        """
+        if args:
+            attrs = ['id', 'size', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        elif kwargs:
+            for k, v in kwargs.items():
+                setattr(self, k, v)

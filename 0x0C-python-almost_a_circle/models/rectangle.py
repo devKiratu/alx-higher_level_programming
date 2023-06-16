@@ -108,6 +108,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """returns a custom representation of the rectangle"""
-        r = "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__, self.id,\
-                self.x, self.y, self.width, self.height)
+        r = "[{}] ({}) {}/{} - {}/{}".format(
+                self.__class__.__name__, self.id, self.x, self.y, self.width,
+                self.height
+                )
         return r

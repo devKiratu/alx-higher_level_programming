@@ -20,3 +20,28 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.x, 3)
         self.assertEqual(r2.y, 5)
         self.assertEqual(r2.id, 7)
+
+    def test_invalid_data(self):
+        with self.assertRaises(TypeError):
+            r3 = Rectangle(10, "2")
+
+        with self.assertRaises(TypeError):
+            r3 = Rectangle("10", 2)
+
+        with self.assertRaises(ValueError):
+            r3 = Rectangle(0, 5)
+
+        with self.assertRaises(ValueError):
+            r3 = Rectangle(10, -2)
+
+        with self.assertRaises(TypeError):
+            r3 = Rectangle(10, 2, "2", 3)
+
+        with self.assertRaises(TypeError):
+            r3 = Rectangle(10, 7, 2, "-3")
+
+        with self.assertRaises(ValueError):
+            r3 = Rectangle(10, 2, 5, -5)
+
+        with self.assertRaises(ValueError):
+            r3 = Rectangle(10, 2, -5, 5)

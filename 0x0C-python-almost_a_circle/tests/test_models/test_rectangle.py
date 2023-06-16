@@ -91,6 +91,6 @@ class TestRectangle(unittest.TestCase):
     def test_to_dictionary(self):
         r1 = Rectangle(10, 2, 1, 9, 1)
         expected = {'id': 1, 'width': 10, 'height': 2, 'x': 1, 'y': 9}
-        r1_dict = r1.to_dictionary() 
+        r1_dict = r1.to_dictionary()
         self.assertEqual(r1_dict, expected)
         self.assertIsInstance(r1_dict, dict)

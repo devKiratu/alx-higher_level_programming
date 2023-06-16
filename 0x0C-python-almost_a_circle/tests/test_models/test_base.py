@@ -29,3 +29,9 @@ class TestBase(unittest.TestCase):
         expected = [{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]
         self.assertEqual(json_str, json.dumps(expected))
         self.assertIsInstance(json_str, str)
+
+        # Invalid input
+        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
+        self.assertIsNone(Base.to_json_string(12))
+        self.assertIsNone(Base.to_json_string("12"))

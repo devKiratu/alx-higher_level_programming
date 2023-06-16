@@ -17,6 +17,7 @@ class Base:
         else:
             self.id = id
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ returns the JSON string representation of list_dictionaries
             Args:
@@ -25,7 +26,4 @@ class Base:
         if list_dictionaries is None:
             return "[]"
         if isinstance(list_dictionaries, list):
-            if len(list_dictionaries) == 0:
-                return "[]"
-            else:
-                return [json.dumps(ls) for ls in list_dictionaries]
+            return json.dumps(list_dictionaries)

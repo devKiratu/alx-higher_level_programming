@@ -2,6 +2,9 @@
 """Defines base class for all the classes in this project"""
 
 
+import json
+
+
 class Base:
     """Base class - manages the id attribute in all subclasses"""
     __nb_objects = 0
@@ -13,3 +16,16 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+
+    def to_json_string(list_dictionaries):
+        """ returns the JSON string representation of list_dictionaries
+            Args:
+                list_dictionaries: a list of dictionaries
+        """
+        if list_dictionaries is None:
+            return "[]"
+        if isinstance(list_dictionaries, list):
+            if len(list_dictionaries) == 0:
+                return "[]"
+            else:
+                return [json.dumps(ls) for ls in list_dictionaries]

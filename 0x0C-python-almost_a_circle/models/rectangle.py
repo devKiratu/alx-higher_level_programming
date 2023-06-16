@@ -120,11 +120,17 @@ class Rectangle(Base):
                 )
         return r
 
-    def update(self, *args):
-        """Updates Rectangle attributes
+    def update(self, *args, **kwargs):
+        """Updates Rectangle attributes contained in args, or kwargs when args
+            does not exist or is empty
             Args:
                 args: new attributes list
+                kwargs: a dict of the new attributes
         """
-        attrs = ['id', 'width', 'height', 'x', 'y']
-        for i in range(len(args)):
-            setattr(self, attrs[i], args[i])
+        if args:
+            attrs = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        elif kwargs:
+            for k, v in kwargs.items():
+                setattr(self, k, v)

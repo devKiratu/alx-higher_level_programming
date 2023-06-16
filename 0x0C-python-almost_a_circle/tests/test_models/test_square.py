@@ -49,3 +49,10 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.__str__(), "[Square] (1) 12/1 - 7")
         s1.update(size=7, id=89, y=1)
         self.assertEqual(s1.__str__(), "[Square] (89) 12/1 - 7")
+
+    def test_to_dictionary(self):
+        s1 = Square(10, 2, 1, 1)
+        s1_dict = s1.to_dictionary()
+        expected = {'id': 1, 'size': 10, 'x': 2, 'y': 1}
+        self.assertEqual(s1_dict, expected)
+        self.assertIsInstance(s1_dict, dict)

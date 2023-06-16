@@ -25,7 +25,14 @@ class Rectangle(Base):
         """sets the value for width
             Args:
                 value: width value
+            Raises:
+                TypeError: if value is not an integer
+                ValueError: if value <= 0
         """
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -38,7 +45,14 @@ class Rectangle(Base):
         """sets the value for height
             Args:
                 value: height value
+            Raises:
+                TypeError: if value is not an integer
+                ValueError: if value <= 0
         """
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -51,7 +65,14 @@ class Rectangle(Base):
         """sets the x offset for the rectangle
             Args:
                 value: x offset to set
+            Raises:
+                TypeError: if value is not an integer
+                ValueError: if value < 0
         """
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -64,5 +85,12 @@ class Rectangle(Base):
         """sets the value for y offset
             Args:
                 value: y offset
+            Raises:
+                TypeError: if value is not an integer
+                ValueError: if value < 0
         """
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value

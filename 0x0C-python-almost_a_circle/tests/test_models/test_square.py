@@ -7,7 +7,7 @@ from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
-    def test_square_area(self):
+    def test_area(self):
         s1 = Square(5)
         self.assertEqual(s1.area(), 25)
         s2 = Square(2, 2)
@@ -15,7 +15,7 @@ class TestSquare(unittest.TestCase):
         s3 = Square(3, 1, 3)
         self.assertEqual(s3.area(), 9)
 
-    def test_square__str__(self):
+    def test___str__(self):
         s1 = Square(5, 0, 0, 1)
         self.assertEqual(s1.__str__(), "[Square] (1) 0/0 - 5")
         s2 = Square(2, 2, 0, 2)
@@ -32,7 +32,7 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             s1.size = "9"
 
-    def test_square_update(self):
+    def test_update(self):
         s1 = Square(5, 0, 0, 1)
         self.assertEqual(s1.__str__(), "[Square] (1) 0/0 - 5")
         s1.update(10)

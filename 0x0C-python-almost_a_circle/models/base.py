@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -81,5 +82,47 @@ class Base:
                 for obj in objs_list:
                     instances.append(cls.create(**obj))
                 return instances
+        except Exception:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes object to csv
+            Args:
+                list_objs: objects to serialize to csv
+        """
+        filename = "{}.csv".format(cls.__name__)
+        if list_objs is None:
+            data = []
+        if cls.__name__ == "Rectangle":
+            data = [[obj.id, obj.width, obj.height, obj.x, obj.y]
+                    for obj in list_objs]
+        if cls.__name__ == "Square":
+            data = [[obj.id, obj.size, obj.x, obj.y]
+                    for obj in list_objs]
+        with open(filename, "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerows(data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes a csv file into Rectangle/Square instances"""
+        filename = "{}.csv".format(cls.__name__)
+        try:
+            data = []
+            with open(filename, newline="") as f:
+                rows = csv.reader(f)
+                for row in rows:
+                    num_row = [int(i) for i in row]
+                    if cls.__name__ == "Rectangle":
+                        r_id, width, height, x, y = num_row
+                        kwargs = {'id': r_id, 'width': width,
+                                  'height': height, 'x': x, 'y': y}
+                    elif cls.__name__ == "Square":
+                        s_id, size, x, y = num_row
+                        kwargs = {'id': s_id, 'size': size, 'x': x, 'y': y}
+                    obj = cls.create(**kwargs)
+                    data.append(obj)
+            return data
         except Exception:
             return []

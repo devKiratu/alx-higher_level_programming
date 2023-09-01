@@ -15,12 +15,11 @@ if __name__ == "__main__":
     values = {'q': search_param}
     try:
         res = requests.post('http://0.0.0.0:5000/search_user', data=values)
-        res.raise_for_status()
         result = res.json()
-        print(type(result))
-    except requests.exceptions.HTTPError as e:
-        if res.status_code == 204:
+        if len(result) == 0:
             print("No result")
+        else:
+            print("[{}] {}".format(result.get('id'), result.get('name')))
     except requests.exceptions.JSONDecodeError as e:
         print("Not a valid JSON")
     except requests.exceptions.RequestException as e:

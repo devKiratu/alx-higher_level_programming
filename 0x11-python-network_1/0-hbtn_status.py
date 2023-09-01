@@ -4,11 +4,11 @@ from https://alx-intranet.hbtn.io/status
 """
 
 
-from urllib.request import urlopen
+import urllib.request
 
 
 url = 'https://alx-intranet.hbtn.io/status'
-with urlopen(url) as response:
+with urllib.request.urlopen(url) as response:
     body = response.read()
     print("Body response:")
     print("\t - type: {}".format(type(body)))

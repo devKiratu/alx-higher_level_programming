@@ -10,7 +10,8 @@ import sys
 if __name__ == "__main__":
     try:
         res = requests.get(sys.argv[1])
+        res.raise_for_status()
         print(res.text)
     except requests.exceptions.RequestException as e:
-        if r.status_code >= 400:
-            print("Error code:", r.status_code)
+        if res.status_code >= 400:
+            print("Error code:", res.status_code)

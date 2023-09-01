@@ -18,4 +18,4 @@ if __name__ == "__main__":
     for i in range(0, 10):
         sha = results[i].get('sha')
         author = results[i].get('commit').get('author').get('name')
-        print("{} {}".format(sha, author))
+        print("{}: {}".format(sha, author))

@@ -14,7 +14,6 @@ if __name__ == "__main__":
 
     res = requests.get(url)
     results = res.json()
-    
     try:
         for i in range(0, 10):
             sha = results[i].get('sha')

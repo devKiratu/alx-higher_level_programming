@@ -3,10 +3,12 @@
 from https://alx-intranet.hbtn.io/status
 """
 
+import urllib.request
+
 if __name__ == "__main__":
-    import urllib.request
     url = 'https://alx-intranet.hbtn.io/status'
-    with urllib.request.urlopen(url) as response:
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(req) as response:
         body = response.read()
         print("Body response:")
         print("\t - type: {}".format(type(body)))

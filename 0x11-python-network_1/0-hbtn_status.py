@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""This script uses urllib to fetch data
-from https://alx-intranet.hbtn.io/status
+"""
+This script uses urllib to fetch data from https://alx-intranet.hbtn.io/status
 """
 
 import urllib.request

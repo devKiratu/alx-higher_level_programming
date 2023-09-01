@@ -12,7 +12,7 @@ import sys
 if __name__ == "__main__":
     values = {'email': sys.argv[2]}
     data = urllib.parse.urlencode(values)
-    data = urlib.encode('ascii')
+    data = urllib.encode('ascii')
     req = urllib.request.Request(sys.argv[1], data)
     with urllib.request.urlopen(req) as response:
         body = response.read()
